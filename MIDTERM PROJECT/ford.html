@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1></h1>
+    <title>Ford</title>
+    <html src= ></html>
+    <!--Nav Bar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+   
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<h1>CARS.PH</h1>
+<body>   
+<hr>  
+<div id="items"></div>
+
+<img class="left-gear" src="images/gear.png" alt="gear-img">
+<img class="right-gear" src="images/gear.png" alt="gear-img">
+<section id="title">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand brand-title">Ford</a>
+      <button class="navbar-toggler"></button>
+          
+      </div>
+    </nav>
+
+
+  </section>
+  
+  <img class="ford" src="images/ford.jpg" alt="ford-img">
+  <div id="list">
+  </div>
+  <p>Ford Motor Company, American automotive corporation founded in 1903 by Henry Ford and 11 associate investors. In 1919 the company was reincorporated, with Ford, his wife, Clara, and his son, Edsel, acquiring full ownership; they, their heirs, and the Ford Foundation (formed 1936) were sole stockholders until January 1956, when public sale of the common stock was first offered. The company manufactures passenger cars and trucks as well as automotive parts and accessories. Headquarters are in Dearborn, Michigan.</p>
+  <section id="testimonials">
+    <div id="carousel-slide" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">Why You Should Choose Ford</h2>
+          <em>A History of Quality.</em>
+          <em>At Ford Motor Company, quality isn’t just a tagline for advertisements; it’s an integral part of the business of making cars and trucks. From the pioneering days of Henry Ford’s assembly line concept to the current state-of-the-art manufacturing plants, every Ford vehicle is tested to meet the highest standards of quality and functionality.</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Critically Acclaimed New Designs.</h2>
+          <em> In recent years Ford has introduced more vehicles with new and innovative designs than any other car company. The critics are applauding Ford cars and trucks for their aggressive new styling and world-class appeal. We think it’s about time that they recognized what everyone else already knows.</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Ford Safety Features.</h2>
+          <em>When it comes to safety ratings by the National Highway Traffic Safety Administration (NHTSA) and the Insurance Institute for Highway Safety (IIHS), Ford cars and trucks score consistently top marks. Using innovations like inflatable rear safety belts and lane departure warnings, Ford is setting the standard for safety.</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">World’s Best-Selling Vehicles.</h2>
+          <em>The Ford F-150 holds the honor of being the best-selling truck around the world. In addition, the Ford Focus became the world’s best-selling car in 2013, surpassing the Toyota Corolla. All told, Ford has bragging rights to three of the ten best-selling vehicles in the world, with the Ford Fiesta sub-compact coming in at number six on the list.</em>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-slide" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-slide" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  <a class="btn" href="https://www.ford.com.ph/">Ford.ph</a> 
+  <a class= "btn"href="https://www.cars.com/shopping/ford-taurus-1999/">Pricing</a>
+  <hr> 
+  <p2>© Copyright Pastolero, Ramirez Cars.ph</p2>
+  <br>
+  <a class="home" href="index.html">Back to homepage</a>
+</body>
+</html>
+
+<script>
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://car-data.p.rapidapi.com/cars?limit=50&page=0");
+xhr.setRequestHeader("X-RapidAPI-Key", "3f249e16d2msha999c4bde240a02p1d256bjsnc3b3139ce933");
+xhr.setRequestHeader("X-RapidAPI-Host", "car-data.p.rapidapi.com");
+
+
+
+
+alert("Hi Human");
+
+xhr.onload = function(){
+    var response = xhr.response;
+    var parsedData = JSON.parse(response);
+    console.log(parsedData);
+
+    ///Ford 
+    var make = parsedData[3].make; 
+    document.getElementById("list").innerHTML += "<h3> <b>Make: </b>"+make+"<h3> "
+    
+    var model = parsedData[3].model; 
+    document.getElementById("list").innerHTML += "<p3> <b>Model: </b>"+model+"<p3> <b>,</b>"
+
+    var year = parsedData[3].year; 
+    document.getElementById("list").innerHTML += "<p3> <b>Year: </b>"+year+"<p3> <b>,</b>"
+
+    var type = parsedData[3].type; 
+    document.getElementById("list").innerHTML += "<p3> <b>Type: </b>"+type+"<p3> <b>,</b>"
+    
+      var id = parsedData[3].id; 
+    document.getElementById("list").innerHTML += "<p3> <b>ID: </b>"+id+"<p3>"
+
+
+    }
+xhr.send(data);
+
+ </script>
+
+
+

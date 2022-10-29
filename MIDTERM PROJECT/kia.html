@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1></h1>
+    <title>Kia</title>
+    <!--Nav Bar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+   
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<h1>CARS.PH</h1>
+<body>   
+<hr>  
+<div id="items"></div>
+
+<img class="left-gear" src="images/gear.png" alt="gear-img">
+<img class="right-gear" src="images/gear.png" alt="gear-img">
+<section id="title">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand brand-title">Kia</a>
+      <button class="navbar-toggler" ></button>
+      </div>
+    </nav>
+
+
+  </section>
+ 
+  <img class="kia" src="images/kia.jpg" alt="kia-img">
+  <div id="list">
+  </div>
+  <p>Kia Corporation was founded in May 1944 and is Korea’s oldest manufacturer of motor vehicles. From humble origins making bicycles and motorcycles, Kia has grown – as part of the dynamic, global Hyundai-Kia Automotive Group – to become the world’s fifth largest vehicle manufacturer.</p>
+  <section id="testimonials">
+    <div id="carousel-slide" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">Why You Should Choose Kia</h2>
+          <em>Kia cars have a long standing name in the market and they provide a host of high-tech and innovative features. The Kia models not only look great but also have a high degree of user comfort and safety. These products also provide a great value for money.</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Power-packed Performance </h2>
+          <em>Kia cars give remarkable performance over long time. These cars are tested over time and give a satisfactory drive quality and work over long use without maintenance issues and breakdowns. Kia cars rank high on efficiency. In fact, its engineering team has put in a lot of effort to improve the mileage and reduce Carbon Dioxide emissions. These rank at par or better than average figures by leading manufacturers.</em>        
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text"> Dashing designs</h2>
+          <em>Kia cars are designed to incorporate most features demanded by clients. The styling is not only functional but also appealing to view. In fact, the styling makes Kia more desirable than many older players.Kia cars look really good, and you will feel great driving its good models. Looks play an ever important role in selection by customers in these times.</em>         
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Wonderful warranty:</h2>
+          <em>Kia cars provide a warranty for seven years ever since they did first in 2007. Initially, it was available for select models, but now the entire range comes with this wonderful warranty. This creates a very good attraction for users and testifies the confidence the company has in its various models.</em>        
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-slide" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-slide" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  <a class="btn" href="https://www.kia.com/ph/main.html">Kia.ph</a> 
+  <a class= "btn"href="https://www.carsguide.com.au/kia/sorento/price/2006">Pricing</a> 
+  <hr> 
+  <p2>© Copyright Pastolero, Ramirez Cars.ph</p2>
+  <br>
+  <a class="home" href="index.html">Back to homepage</a>
+</body>
+</html>
+
+
+
+<script>
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://car-data.p.rapidapi.com/cars?limit=50&page=0");
+xhr.setRequestHeader("X-RapidAPI-Key", "3f249e16d2msha999c4bde240a02p1d256bjsnc3b3139ce933");
+xhr.setRequestHeader("X-RapidAPI-Host", "car-data.p.rapidapi.com");
+
+
+xhr.onload = function(){
+    var response = xhr.response;
+    var parsedData = JSON.parse(response);
+    console.log(parsedData);
+    
+    //KIA
+    var make = parsedData[46].make; 
+    document.getElementById("list").innerHTML += "<h3> <b>Make: </b>"+make+"<h3>"
+    
+    var model = parsedData[46].model; 
+    document.getElementById("list").innerHTML += "<p3> <b>Model: </b>"+model+"<p3> <b>,</b>"
+
+    var year = parsedData[46].year; 
+    document.getElementById("list").innerHTML += "<p3> <b>Year: </b>"+year+"<p3> <b>,</b>"
+
+    var type = parsedData[46].type; 
+    document.getElementById("list").innerHTML += "<p3> <b>Type: </b>"+type+"<p3> <b>,</b> "
+
+    var id = parsedData[46].id; 
+    document.getElementById("list").innerHTML += "<p3> <b>ID: </b>"+id+"<p3>"
+
+}   
+xhr.send(data);
+</script>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <h1></h1>
+    <title>Mitsubishi</title>
+    <html src= ></html>
+    <!--Nav Bar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+   
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<h1>CARS.PH</h1>
+<body>   
+<hr>  
+<div id="items"></div>
+
+<img class="left-gear" src="images/gear.png" alt="gear-img">
+<img class="right-gear" src="images/gear.png" alt="gear-img">
+<section id="title">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand brand-title">Mitsubishi</a>
+      <button class="navbar-toggler" ></button>
+      </div>
+    </nav>
+
+
+  </section>
+  
+  <img class="mitsubishi" src="images/mitsubishi.jpg" alt="mitsubishi-img">
+  <div id="list">
+  </div>
+  <p>Mitsubishi's automotive origins date back to 1917, when the Mitsubishi Shipbuilding Co., Ltd. introduced the Mitsubishi Model A, Japan's first series-production automobile. An entirely hand-built seven-seater sedan based on the Fiat Tipo 3, it proved expensive compared to its American and European mass-produced rivals, and was discontinued in 1921 after only 22 had been built.</p>
+  <section id="testimonials">
+    <div id="carousel-slide" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">Why You Should Choose Mitsubishi</h2>
+          <em>The Mitsubishi brand takes pride in being at the cutting edge of engineering milestones. Some of these include All-Wheel Control, which continually monitors the road and intelligently transfers power to the wheels that have the most traction. This improves handling and safety! For ideal fuel efficiency, Mitsubishi has MIVEC Engine Technology. MIVEC optimizes valve time for maximum power and fuel efficiency.</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Excellent Gas Mileage </h2>
+          <em>The Mitsubishi brand is noted for its excellent gas mileage. You can go for miles, or even days, without needing to visit a gas station. What does that mean for you in the long run? If you spend less money on gas, that means you have more money to spend on things that matter. You know, like springing for a burger on lunch and dumping the month's savings into an investment opportunity.</em>        
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Reliability</h2>
+          <em>In terms of reliability, the Mitsubishi Reliability Rating is a 4.0 out of 5.0, ranking it 6th for all car brands. That means when you get a Mitsubishi, as long as you maintain the scheduled maintenance, you'll have a great vehicle for a long time to come.</em>        
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">Steering to the future</h2>
+          <em>Mitsubishi is a brand that is constantly innovating. They have pioneered technologies such as four-wheel drive and traction control, and Mitsubishi is fully turned towards the future with their development of electric propulsion. In fact, the Japanese manufacturer began researching and developing electric vehicle technologies as early as the 1970s, and in 1999, their FTO-EV prototype earned a Guinness World Record by being the first electric car to travel 2,000 kilometers in 24 hours. In recent history, the brand has produced and sold over 50,000 i-MIEV electric cars, while in 2014, the MiEV Evolution III beat the Pikes Peak International Hill Climb’s EV prototype course record by over 30 seconds, with MiEV Evolution III’s finishing first and second in the competition. In order to help develop a plug-in SUV, Mitsubishi also tested its EV and Twin-Motor 4WD technologies in the Baja Portalegre 500 off-road race.</em>        
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carousel-slide" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-slide" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
+  <a class="btn" href="https://www.mitsubishi-motors.com/en/index.html">Mitsubishi.global</a> 
+  <a class= "btn"href="https://www.carsguide.com.au/mitsubishi/outlander/price/2010">Pricing</a>
+  <hr> 
+  <p2>© Copyright Pastolero, Ramirez Cars.ph</p2>
+  <br>
+  <a class="home" href="index.html">Back to homepage</a>
+</body>
+</html>
+
+<script>
+const data = null;
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open("GET", "https://car-data.p.rapidapi.com/cars?limit=50&page=0");
+xhr.setRequestHeader("X-RapidAPI-Key", "3f249e16d2msha999c4bde240a02p1d256bjsnc3b3139ce933");
+xhr.setRequestHeader("X-RapidAPI-Host", "car-data.p.rapidapi.com");
+
+
+
+
+alert("Hi Human");
+
+xhr.onload = function(){
+    ///MITSUBISHI
+    var response = xhr.response;
+    var parsedData = JSON.parse(response);
+    console.log(parsedData);
+
+    var make = parsedData[9].make; 
+    document.getElementById("list").innerHTML += "<h3> <b>Make: </b>"+make+"<h3>"
+    
+    var model = parsedData[9].model; 
+    document.getElementById("list").innerHTML += "<p3> <b>Model: </b>"+model+"<p3> <b>,</b>"
+
+    var year = parsedData[9].year; 
+    document.getElementById("list").innerHTML += "<p3> <b>Year: </b>"+year+"<p3> <b>,</b>"
+
+    var type = parsedData[9].type; 
+    document.getElementById("list").innerHTML += "<p3> <b>Type: </b>"+type+"<p3> <b>,</b>"
+
+    var id = parsedData[9].id; 
+    document.getElementById("list").innerHTML += "<p3> <b>ID: </b>"+id+"<p3>"
+
+    }
+xhr.send(data);
+
+ </script>
+
+
+
